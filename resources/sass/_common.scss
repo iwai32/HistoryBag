@@ -1,0 +1,57 @@
+/*グローバルヘッダー*/
+/*グローバルナビ(サブ)*/
+.g-nav--sub {
+  background-color: $black;
+  color: $white;
+  display: $f;
+  justify-content: $sb;
+  font-size: 14px;
+  padding: 10px 15px;
+
+  &__to-top__anchor {
+    color: $white;
+  }
+}
+
+.g-nav--sub__groups {
+  display: $f;
+  .g-nav--sub__account {
+    display: $f;
+    margin-right: 10px;
+    &__link__anchor {
+      color: $white;
+    }
+    &__link:first-child {
+      margin-right: 10px;
+    }
+  }
+  .g-nav--sub__language {
+    border-left: 2px solid #888;
+    color: $white;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+}
+
+/*ヘッダーコンテンツ*/
+.g-header-inner {
+  background: $main-color;
+  display: $f;
+  justify-content: $sb;
+  padding: 20px;
+  .app-title {
+    color: $white;
+    font-family: $kreon;
+    font-size: 48px;
+    letter-spacing: $letter-spacing-base;
+  }
+}
+
+.g-nav--main {
+  display: $f;
+  align-items: $c;
+  &__items {
+    display: $f;
+    justify-content: $sb;
+  }
+}
