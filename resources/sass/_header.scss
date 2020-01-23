@@ -1,0 +1,125 @@
+/*グローバルヘッダー*/
+.g-header {
+  margin-bottom: 40px;
+}
+/*ユーザー関連*/
+.user-wrapper {
+  margin-bottom: 20px;
+}
+
+/*ユーザーガイド*/
+.user-guide {
+  background-color: $black;
+  color: $white;
+  display: $f;
+  justify-content: $sb;
+  font-size: 14px;
+  padding: 10px 15px;
+}
+
+.user-guide__groups {
+  display: $f;
+  .user-guide__account {
+    display: $f;
+    margin-right: 10px;
+    &__link__anchor {
+      color: $white;
+    }
+    &__link:first-child {
+      margin-right: 10px;
+    }
+  }
+  .user-guide__language {
+    border-left: 2px solid #888;
+    color: $white;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+}
+
+/*ユーザーコンテンツ*/
+.user-contents {
+  background: $main-color;
+  display: $f;
+  justify-content: $sb;
+  padding: 20px;
+  .app-title {
+    color: $white;
+    font-family: $kreon;
+    font-size: 48px;
+    letter-spacing: $letter-spacing-base;
+  }
+
+  &__nav {
+    display: $f;
+    align-items: $c;
+    &__items {
+      display: $f;
+      justify-content: $sb;
+      align-items: $c;
+      & > li {
+        font-size: 24px;
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      .account-nav {
+        color: $white;
+      }
+      .favorites {
+        color: $yellow;
+      }
+      .logout {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/*グローバルナビ*/
+.g-nav {
+  background-color: $accent-color;
+  border-bottom: 4px solid $main-color;
+  &>ul {
+    display: $f;
+    width: $nav-width;
+    margin: 0 auto;
+  }
+
+  &__list {
+    font-size: 14px;
+    letter-spacing: $letter-spacing-base;
+    width: 160px;
+    padding: 5px 0;
+    &>a {
+      border-right: 2px solid #ccc;
+      display: block;
+      text-align: center;
+      padding: 5px 0;
+    }
+    /*current*/
+    &.current {
+      background: $main-color;
+      border-radius: 10px 10px 0 0;
+      color: $white;
+      font-weight: bold;
+      position: relative;
+      top: -4px;
+      &>a {
+        border-right: none;
+      }
+      &::after {
+        background: inherit;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: -webkit-fill-available;
+        height: 4px;
+      }
+    }
+  }
+
+}

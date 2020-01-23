@@ -200,16 +200,36 @@ button {
           appearance: none;
 }
 
+/*input要素のスタイルを初期化*/
+
+input {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+}
+
 /*Colors*/
 
 /*FlexBox*/
 
 /*GoogleFont*/
 
+/*共通*/
+
+.inner {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+body {
+  background-color: #dce8e0;
+}
+
 /*グローバルヘッダー*/
 
 .g-header {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 /*ユーザー関連*/
@@ -322,7 +342,7 @@ button {
 .g-nav > ul {
   display: -webkit-box;
   display: flex;
-  width: 1200px;
+  width: 1000px;
   margin: 0 auto;
 }
 
@@ -363,5 +383,109 @@ button {
   left: 0;
   width: -webkit-fill-available;
   height: 4px;
+}
+
+/*日報*/
+
+.report-search-wrapper {
+  background-color: #3cba5f;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 80px;
+  padding: 20px;
+}
+
+.report-search-wrapper .report-search {
+  display: -webkit-box;
+  display: flex;
+}
+
+.report-search-wrapper .report-search__keyword {
+  font-size: 16px;
+  padding: 8px;
+  width: 600px;
+}
+
+.report-search-wrapper .report-search__button {
+  background-color: #dce8e0;
+  color: #fff;
+  font-size: 16px;
+  width: 40px;
+}
+
+.report-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -webkit-column-gap: 80px;
+     -moz-column-gap: 80px;
+          column-gap: 80px;
+  row-gap: 60px;
+}
+
+.report-list__item {
+  background-color: #F2F4F6;
+  width: 280px;
+}
+
+.report-cell {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  height: 100%;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+.report-cell__photo {
+  margin-bottom: 10px;
+}
+
+.report-cell__header {
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.report-cell__date {
+  color: #444;
+  font-size: 14px;
+}
+
+.report-cell__body {
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.report-cell__footer {
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.report-cell__footer .tags {
+  display: -webkit-box;
+  display: flex;
+  font-size: 14px;
+}
+
+.report-cell__footer .tags__item {
+  border: 1px solid #aaa;
+  padding: 2px 4px;
+  margin-right: 10px;
+}
+
+.report-cell__favorite {
+  border: 1px solid #aaa;
+  background-color: #ccc;
+  margin-top: auto;
+  padding: 10px;
+}
+
+.report-cell__favorite .is-favorite {
+  color: #ffed4a;
+  font-size: 24px;
+  text-align: center;
 }
 
