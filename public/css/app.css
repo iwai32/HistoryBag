@@ -137,6 +137,7 @@ a {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -207,9 +208,19 @@ button {
 
 /*グローバルヘッダー*/
 
-/*グローバルナビ(サブ)*/
+.g-header {
+  margin-bottom: 20px;
+}
 
-.g-nav--sub {
+/*ユーザー関連*/
+
+.user-wrapper {
+  margin-bottom: 20px;
+}
+
+/*ユーザーガイド*/
+
+.user-guide {
   background-color: #222;
   color: #eee;
   display: -webkit-box;
@@ -220,39 +231,35 @@ button {
   padding: 10px 15px;
 }
 
-.g-nav--sub__to-top__anchor {
-  color: #eee;
-}
-
-.g-nav--sub__groups {
+.user-guide__groups {
   display: -webkit-box;
   display: flex;
 }
 
-.g-nav--sub__groups .g-nav--sub__account {
+.user-guide__groups .user-guide__account {
   display: -webkit-box;
   display: flex;
   margin-right: 10px;
 }
 
-.g-nav--sub__groups .g-nav--sub__account__link__anchor {
+.user-guide__groups .user-guide__account__link__anchor {
   color: #eee;
 }
 
-.g-nav--sub__groups .g-nav--sub__account__link:first-child {
+.user-guide__groups .user-guide__account__link:first-child {
   margin-right: 10px;
 }
 
-.g-nav--sub__groups .g-nav--sub__language {
+.user-guide__groups .user-guide__language {
   border-left: 2px solid #888;
   color: #eee;
   font-size: 14px;
   padding-left: 10px;
 }
 
-/*ヘッダーコンテンツ*/
+/*ユーザーコンテンツ*/
 
-.g-header-inner {
+.user-contents {
   background: #3cba5f;
   display: -webkit-box;
   display: flex;
@@ -261,24 +268,100 @@ button {
   padding: 20px;
 }
 
-.g-header-inner .app-title {
+.user-contents .app-title {
   color: #eee;
   font-family: "Kreon", serif;
   font-size: 48px;
   letter-spacing: 0.25em;
 }
 
-.g-nav--main {
+.user-contents__nav {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
           align-items: center;
 }
 
-.g-nav--main__items {
+.user-contents__nav__items {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.user-contents__nav__items > li {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.user-contents__nav__items > li:last-child {
+  margin-right: 0;
+}
+
+.user-contents__nav__items .account-nav {
+  color: #eee;
+}
+
+.user-contents__nav__items .favorites {
+  color: #ffed4a;
+}
+
+.user-contents__nav__items .logout {
+  font-size: 14px;
+}
+
+/*グローバルナビ*/
+
+.g-nav {
+  background-color: #F2F4F6;
+  border-bottom: 4px solid #3cba5f;
+}
+
+.g-nav > ul {
+  display: -webkit-box;
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.g-nav__list {
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  width: 160px;
+  padding: 5px 0;
+  /*current*/
+}
+
+.g-nav__list > a {
+  border-right: 2px solid #ccc;
+  display: block;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.g-nav__list.current {
+  background: #3cba5f;
+  border-radius: 10px 10px 0 0;
+  color: #eee;
+  font-weight: bold;
+  position: relative;
+  top: -4px;
+}
+
+.g-nav__list.current > a {
+  border-right: none;
+}
+
+.g-nav__list.current::after {
+  background: inherit;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: -webkit-fill-available;
+  height: 4px;
 }
 
