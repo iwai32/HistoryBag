@@ -1,26 +1,3 @@
-/*日報*/
-.report-search-wrapper {
-  background-color: $main-color;
-  display: $f;
-  justify-content: $fe;
-  margin-bottom: 80px;
-  padding: 20px;
-  .report-search {
-    display: $f;
-    &__keyword {
-      font-size: 16px;
-      padding: 8px;
-      width: 600px;
-    }
-    &__button {
-      background-color: $base-color;
-      color: #fff;
-      font-size: 16px;
-      width: 40px;
-    }
-  }
-}
-
 .report-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -28,6 +5,7 @@
   row-gap: 60px;
   &__item {
     background-color: $accent-color;
+    box-shadow: 0 10px 24px -10px $border-color;
     width: 280px;
   }
 }
@@ -38,8 +16,20 @@
   height: 100%;
   line-height: $line-height-base;
   letter-spacing: .05em;
+  &__link:hover {
+    opacity: .8;
+    .report-cell__photo img {
+      transform: scale(1.2);
+    }
+  }
   &__photo {
     margin-bottom: 10px;
+    overflow: hidden;
+    height: 160px;
+    img {
+      transition-duration: .8s;
+      transition-property:transform;
+    }
   }
   &__header {
     padding: 0 10px;
@@ -64,18 +54,40 @@
         border: 1px solid $border-color;
         padding: 2px 4px;
         margin-right: 10px;
+        transition: .4s;
+        &:hover {
+          border-color: $base-color;
+        }
       }
     }
   }
   &__favorite {
     border: 1px solid $border-color;
-    background-color: #ccc;
     margin-top: auto;
-    padding: 10px;
+    &__link {
+      background-color: #ccc;
+      display: $f;
+      justify-content: $c;
+      padding: 10px;
+      &:hover {
+        /*斜め線のストライプ*/
+        background-image: linear-gradient(
+        -45deg,
+        $border-color 25%,
+        $white 25%,
+        $white 50%,
+        $border-color 50%,
+        $border-color 75%,
+        $white 75%,
+        $white
+        );
+        background-size: 8px 8px;
+      }
+    }
     .is-favorite {
       color: $yellow;
-      font-size: 24px;
       text-align: center;
+      font-size: 24px;
     }
   }
 }

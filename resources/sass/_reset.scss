@@ -122,10 +122,19 @@ button {
     appearance: none;
 }
 
-/*input要素のスタイルを初期化*/
+/*フォーム要素のスタイルをリセット*/
 input {
   padding: 0;
   border: none;
   border-radius: 0;
+  outline: none;
+}
+
+select {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
   outline: none;
 }

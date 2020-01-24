@@ -1,7 +1,8 @@
 /*グローバルヘッダー*/
 .g-header {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
+
 /*ユーザー関連*/
 .user-wrapper {
   margin-bottom: 20px;
@@ -10,39 +11,78 @@
 /*ユーザーガイド*/
 .user-guide {
   background-color: $black;
-  color: $white;
-  display: $f;
-  justify-content: $sb;
-  font-size: 14px;
-  padding: 10px 15px;
+  &__inner {
+    color: $white;
+    display: $f;
+    justify-content: $sb;
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  &__to-top {
+    &__anchor:hover {
+      border-bottom: 1px solid $white;
+    }
+  }
 }
 
 .user-guide__groups {
   display: $f;
+  align-items: $c;
   .user-guide__account {
     display: $f;
     margin-right: 10px;
     &__link__anchor {
       color: $white;
+      &:hover {
+        border-bottom: 1px solid $white;
+      }
     }
     &__link:first-child {
       margin-right: 10px;
     }
   }
-  .user-guide__language {
-    border-left: 2px solid #888;
+}
+
+.user-guide__language {
+  border-left: 2px solid #888;
+  padding-left: 10px;
+  position: relative;
+  .language-btn {
     color: $white;
     font-size: 14px;
-    padding-left: 10px;
+  }
+}
+.language-nav {
+  display: none;//jsで出し入れする
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  background-color: $white;
+  border: 2px solid $border-color;
+  width: 140px;
+  &__list  {
+    color: $text-color;
+    font-size: 12px;
+    letter-spacing: .05em;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    &:hover {
+      background-color: $base-color;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
 /*ユーザーコンテンツ*/
 .user-contents {
   background: $main-color;
-  display: $f;
-  justify-content: $sb;
-  padding: 20px;
+  &__inner {
+    display: $f;
+    justify-content: $sb;
+    padding: 20px;
+  }
   .app-title {
     color: $white;
     font-family: $kreon;
@@ -81,6 +121,7 @@
 .g-nav {
   background-color: $accent-color;
   border-bottom: 4px solid $main-color;
+  margin-bottom: 40px;
   &>ul {
     display: $f;
     width: $nav-width;
@@ -93,11 +134,17 @@
     width: 160px;
     padding: 5px 0;
     &>a {
-      border-right: 2px solid #ccc;
+      border-left: 2px solid #ccc;
       display: block;
       text-align: center;
       padding: 5px 0;
     }
+    &:first-child, &.current + & {
+      >a {
+        border-left: none;
+      }
+    }
+
     /*current*/
     &.current {
       background: $main-color;
@@ -107,7 +154,7 @@
       position: relative;
       top: -4px;
       &>a {
-        border-right: none;
+        border-left: none;
       }
       &::after {
         background: inherit;
@@ -121,5 +168,123 @@
       }
     }
   }
+}
 
+/*検索機能*/
+.g-searcher-inner {
+  background-color: $main-color;
+  padding: 20px 20px 20px 80px;
+  display: $f;
+  justify-content: $sb;
+  flex-flow: $r $wr;
+  .search-item {
+    height: 36px;
+    &>* {
+      height: 100%;
+    }
+  }
+  /*ページ検索*/
+  .g-search-page {
+    position: relative;
+    &__type {
+      background-color: $base-color;
+      border: 1px solid $border-color;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 0 8px 0 20px;
+      width: 100px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      right: 10px;
+      top: 40%;
+      transform: rotate(45deg);
+      height: 8px;
+      width: 8px;
+      border-right: 2px solid $border-color;
+      border-bottom: 2px solid $border-color;
+    }
+  }
+
+  /*日付検索*/
+  .g-search-date {
+    &__input {
+      border: 1px solid $border-color;
+      font-size: 12px;
+      padding: 0 8px;
+    }
+  }
+
+  /*キーワード検索*/
+  .g-search-keyword {
+    border: 1px solid $border-color;
+    display: $f;
+    &__input {
+      font-size: 16px;
+      padding: 0 8px;
+      width: 560px;
+    }
+    &__button {
+      background-color: $base-color;
+      color: #fff;
+      font-size: 16px;
+      width: 40px;
+    }
+  }
+
+  /*カテゴリ検索*/
+  .g-search-categories {
+    display: $f;
+    font-size: 12px;
+    padding-top: 10px;
+    height: auto;
+    width: 100%;
+    letter-spacing: .05em;
+    &__label {
+      padding-left: 18px;
+      display: $f;
+      align-items: $c;
+      margin-right: 8px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &__box {
+      display: none;
+      &:checked + span::after {
+        opacity: 1;
+      }
+    }
+    span {
+      position: relative;
+      /*チェックボックス*/
+      /*ボックス*/
+      &::before,&::after {
+        position: absolute;
+        content:"";
+      }
+      &::before {
+        background-color: $white;
+        top: 0;
+        left: -18px;
+        width: 14px;
+        height: 14px;
+        border: 2px solid $border-color;
+        border-radius: 4px;
+      }
+      /*チェック*/
+      &::after {
+        border-right: 3px solid #555;
+        border-bottom: 3px solid #555;
+        left: -14px;
+        top: 2px;
+        width: 5px;
+        height: 9px;
+        transform: rotate(45deg);
+        opacity: 0;
+        z-index: 1;
+      }
+    }
+  }
 }

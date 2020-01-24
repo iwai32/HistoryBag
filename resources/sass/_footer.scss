@@ -1,0 +1,61 @@
+/*グローバルフッター*/
+.g-footer {
+  background-color: $main-color;
+  letter-spacing: .05em;
+}
+
+.footer-nav {
+  background-color: $accent-color;
+  padding: 10px 0;
+  &>ul {
+    display: $f;
+    justify-content: $c;
+    margin: 0 auto;
+    width: $nav-width;
+  }
+  &__list {
+    border-right: 2px solid $border-color;
+    line-height: $line-height-base;
+    font-size: 12px;
+    text-align: center;
+    width: 140px;
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+.footer-inner {
+  display: $f;
+  justify-content: $sb;
+  padding: 20px 0;
+  .copy-right {
+    color: $white;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.language-list-box {
+  display: $f;
+  .label {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  .breadcrumb-language {
+    display: $f;
+    font-size: 12px;
+    &__list {
+      display: $f;
+      align-items: $c;
+      margin-right: 10px;
+      &::before {
+        content: ">";
+        padding-right: 5px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

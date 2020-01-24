@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('common.index');
+Route::get('/daily-report', function () {
+    return view('common.daily-report.index');
 });
