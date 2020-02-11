@@ -1,10 +1,10 @@
 /*共通*/
 .inner {
   margin: 0 auto;
-  width: 1000px;
+  max-width: 1000px;
 }
 
-body {
+.common-body {
   background-color: $base-color;
 }
 

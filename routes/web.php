@@ -11,6 +11,11 @@
 |
 */
 
+//トップページ
+Route::get('/', function() {
+    return view('top.index');
+})->name('top');
+
 Route::get('/daily-report', function () {
     return view('common.daily-report.index');
 });

@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ config('app.name') }}</title>
-    <!--csrf-->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!--scripts-->
-    <script src="{{ mix('/js/app.js') }}" defer></script>
-    <!--styles-->
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bitter|Kreon&display=swap" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <!-- OGP -->
-    <meta property="og:url" content="url"/>
-    <meta property="og:title" content="HistoryBag"/>
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="HistoryBag"/>
-    <meta property="og:image" content=""/>
-    <!-- ファビコン -->
-    <link rel="shortcut icon" href="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ config('app.name') }}</title>
+  <!--csrf-->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <!--scripts-->
+  <script src="{{ mix('/js/app.js') }}" defer></script>
+  <!--styles-->
+  <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Kreon&display=swap" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <!-- OGP -->
+  <meta property="og:url" content="url"/>
+  <meta property="og:title" content="HistoryBag"/>
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="HistoryBag"/>
+  <meta property="og:image" content=""/>
+  <!-- ファビコン -->
+  <link rel="shortcut icon" href="">
 </head>
-<body>
+<body class="common-body">
   <!--header-->
   <header class="g-header">
     <div class="user-wrapper">
       <div class="user-guide">
         <div class="inner user-guide__inner">
-         <p class="user-guide__to-top"><a class="user-guide__to-top__anchor" href="#">top</a></p>
+         <p class="user-guide__to-top"><a class="user-guide__to-top__anchor" href="{{ route('top') }}">top</a></p>
           <div class="user-guide__groups">
             <ul class="user-guide__account">
               <li class="user-guide__account__link">

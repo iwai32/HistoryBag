@@ -122,6 +122,10 @@ button {
     appearance: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 /*フォーム要素のスタイルをリセット*/
 input {
   padding: 0;
