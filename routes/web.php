@@ -11,11 +11,20 @@
 |
 */
 
+//新規登録
+Route::post('/user/signup', 'User\UserController@postSignup')->name('user.signup');
+//ログイン
+
+//ログアウト
+Route::get('/user/logout', 'User\UserController@getLogout')->name('user.logout');
+
 //トップページ
 Route::get('/', function() {
     return view('top.index');
 })->name('top');
 
-Route::get('/daily-report', function () {
-    return view('common.daily-report.index');
-});
+//日報
+//ミドルウェアを設定する
+Route::get('/contents/daily-report', function () {
+    return view('contents.daily-report.index');
+})->name('dailyReport');
