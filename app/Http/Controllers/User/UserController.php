@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    //新規登録
     public function postSignup(Request $request)
     {
       //バリデーション
@@ -18,7 +19,7 @@ class UserController extends Controller
         'email' => 'required|email|unique:users',
         'password' => 'required|min:8|alpha_num'
       ]);
-
+      
       //DBインサート
       $user = new User([
         'name' => $request->input('name'),
@@ -36,6 +37,13 @@ class UserController extends Controller
       return redirect()->route('dailyReport');
     }
 
+    //ログイン
+    public function toSigninPage()
+    {
+      return view('users.signin');
+    }
+
+    //ログアウト
     public function getLogout()
     {
       Auth::logout();
