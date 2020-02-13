@@ -1,3 +1,38 @@
+.report-edit {
+  margin-bottom: 30px;
+  &__nav {
+    display: $f;
+    justify-content: $fe;
+    &__list {
+      display: $f;
+      align-items: $c;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        opacity: .8;
+      }
+      .btn {
+        border-radius: 2px;
+        color: $white;
+        font-size: 16px;
+        letter-spacing: 0.05em;
+        padding: 4px 8px;
+        span {
+          margin-right: 2px;
+        }
+      }
+      .create-btn {
+        background-color: $main-color;
+      }
+      .delete-btn {
+        background-color: $red;
+      }
+    }
+  }
+}
+
 .report-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -6,7 +41,6 @@
   &__item {
     background-color: $accent-color;
     box-shadow: 0 10px 24px -10px $border-color;
-    width: 280px;
   }
 }
 

@@ -1,3 +1,5 @@
+@import "../reset", "../variable", "../common";
+
 .top-body {
   background-color: $main-color;
 }
@@ -6,8 +8,11 @@
   display: $f;
   align-items: $c;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 680px;
   height: 100vh;
+  .top-inner {
+    width: 680px;
+  }
 }
 
 .top-title {
@@ -15,8 +20,10 @@
   .welcome-to-history-bag {
     color: $white;
     font-size: 48px;
+    font-family: $kreon;
     letter-spacing: 0.08em;
     line-height: 1.2;
+    letter-spacing: $letter-spacing-base;
     margin-bottom: 80px;
     position: relative;
     width: max-content;
@@ -41,7 +48,6 @@
   display: $f;
   justify-content: $sb;
   align-items: $bl;
-  width: 680px;
   margin-bottom: 40px;
   .signup-text--or {
     color: $white;
@@ -108,14 +114,14 @@
       font-size: 16px;
     }
     .twitter-icon {
-      color: #66A8E2;
+      color: $twitter-color;
       background-color: $white;
     }
     .google-icon {
-      color: #EA4334;
+      color: $google-color;
     }
     .github-icon {
-      color: #333333;
+      color: $github-color;
     }
   }
 }

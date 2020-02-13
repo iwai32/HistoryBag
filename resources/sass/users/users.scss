@@ -1,0 +1,30 @@
+@import "../reset", "../variable", "../common", "signin";
+
+.auth-page {
+  max-width: 800px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  letter-spacing: .05em;
+  &__title {
+    border: 2px solid $main-color;
+    border-radius: 4px;
+    background-color: $white;
+    color: $main-color;
+    display: inline-block;
+    padding: 10px;
+    font-family: $kreon;
+    font-size: 36px;
+    margin-bottom: 80px;
+  }
+  .auth-container {
+    margin-bottom: 40px;
+  }
+  .auth-to-top {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

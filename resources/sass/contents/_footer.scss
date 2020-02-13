@@ -11,7 +11,7 @@
     display: $f;
     justify-content: $c;
     margin: 0 auto;
-    width: $nav-width;
+    max-width: $nav-width;
   }
   &__list {
     border-right: 2px solid $border-color;
@@ -28,7 +28,7 @@
 .footer-inner {
   display: $f;
   justify-content: $sb;
-  padding: 20px 0;
+  padding: 20px;
   .copy-right {
     color: $white;
     font-weight: bold;

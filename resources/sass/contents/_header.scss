@@ -1,6 +1,6 @@
 /*グローバルヘッダー*/
 .g-header {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 /*ユーザー関連*/
@@ -124,7 +124,7 @@
   margin-bottom: 40px;
   &>ul {
     display: $f;
-    width: $nav-width;
+    max-width: $nav-width;
     margin: 0 auto;
   }
 
