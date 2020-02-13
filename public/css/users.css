@@ -1,0 +1,392 @@
+@charset "UTF-8";
+
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*フォーム要素のスタイルをリセット*/
+
+input {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+}
+
+select {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+/*Colors*/
+
+/*SnsColor*/
+
+/*FlexBox*/
+
+/*GoogleFont*/
+
+/*共通*/
+
+.inner {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.common-body {
+  background-color: #dce8e0;
+}
+
+.g-main {
+  margin-bottom: 120px;
+}
+
+.signin-wrapper {
+  background-color: #eee;
+}
+
+.signin-wrapper .signin-title {
+  background-color: #3cba5f;
+  border-radius: 4px;
+  color: #eee;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 24px 32px;
+}
+
+.signin-wrapper .signin-inner {
+  color: #333;
+  padding: 24px;
+}
+
+.signin-wrapper .signin-inner .signin-to-signup {
+  text-align: center;
+  font-size: 14px;
+}
+
+.signin-wrapper .signin-inner .signin-to-signup a {
+  color: #66A8E2;
+  text-decoration: underline;
+}
+
+.signin-group {
+  border-top: 1px solid #aaa;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.signin-group__item {
+  width: 50%;
+  padding: 10px;
+  border-right: 1px solid #aaa;
+}
+
+.signin-group__item:nth-child(2) {
+  border-right: none;
+}
+
+.signin-group .signin-form .form-group {
+  margin-bottom: 20px;
+}
+
+.signin-group .signin-form .form-group__input {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 10px 8px;
+  width: 100%;
+}
+
+.signin-group .signin-form__btn-area .btn {
+  background-color: #5ecb7c;
+  border-radius: 4px;
+  color: #eee;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1;
+  padding: 8px;
+  width: 100%;
+}
+
+.signin-group .signin-form__btn-area .btn:hover {
+  opacity: 0.8;
+}
+
+.signin-group .social-lists__item {
+  border-radius: 4px;
+  color: #eee;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.signin-group .social-lists__item:last-child {
+  margin-bottom: 0;
+}
+
+.signin-group .social-lists__item.twitter {
+  background-color: #66A8E2;
+}
+
+.signin-group .social-lists__item.google {
+  background-color: #EA4334;
+}
+
+.signin-group .social-lists__item.github {
+  background-color: #333333;
+}
+
+.signin-group .social-lists__link {
+  display: block;
+  font-size: 18px;
+  padding: 8px;
+  text-align: center;
+}
+
+.signin-group .social-lists__link:hover {
+  opacity: 0.8;
+}
+
+.signin-group .social-lists__link .fab {
+  margin-right: 4px;
+}
+
+.auth-page {
+  max-width: 800px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  letter-spacing: 0.05em;
+}
+
+.auth-page__title {
+  border: 2px solid #3cba5f;
+  border-radius: 4px;
+  background-color: #eee;
+  color: #3cba5f;
+  display: inline-block;
+  padding: 10px;
+  font-family: "Kreon", serif;
+  font-size: 36px;
+  margin-bottom: 80px;
+}
+
+.auth-page .auth-container {
+  margin-bottom: 40px;
+}
+
+.auth-page .auth-to-top {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+}
+
+.auth-page .auth-to-top:hover {
+  text-decoration: underline;
+}
+
