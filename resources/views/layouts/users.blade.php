@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{ config('app.name') }}</title>
+  <title>{{ config('app.name') }}の@yield('authTitle')ページ</title>
   <!--csrf-->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!--scripts-->
@@ -26,7 +26,12 @@
   <div class="auth-page">
     <h1 class="auth-page__title">HistoryBag</h1>
     <div class="auth-container">
-      @yield('contents')
+      <div class="users-page-wrapper">
+        @yield('userPageContents')
+        <div class="users-page-inner">
+        @yield('usersPageInner')
+        </div>
+      </div>
     </div>
     <a href="/" class="auth-to-top">topへもどる</a>
   </div>

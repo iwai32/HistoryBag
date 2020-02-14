@@ -245,116 +245,10 @@ select {
   margin-bottom: 120px;
 }
 
-.signin-wrapper {
-  background-color: #eee;
-}
-
-.signin-wrapper .signin-title {
-  background-color: #3cba5f;
-  border-radius: 4px;
-  color: #eee;
-  font-size: 26px;
-  font-weight: bold;
-  padding: 24px 32px;
-}
-
-.signin-wrapper .signin-inner {
-  color: #333;
-  padding: 24px;
-}
-
-.signin-wrapper .signin-inner .signin-to-signup {
-  text-align: center;
-  font-size: 14px;
-}
-
-.signin-wrapper .signin-inner .signin-to-signup a {
-  color: #66A8E2;
-  text-decoration: underline;
-}
-
-.signin-group {
-  border-top: 1px solid #aaa;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 40px;
-}
-
-.signin-group__item {
-  width: 50%;
-  padding: 10px;
-  border-right: 1px solid #aaa;
-}
-
-.signin-group__item:nth-child(2) {
-  border-right: none;
-}
-
-.signin-group .signin-form .form-group {
-  margin-bottom: 20px;
-}
-
-.signin-group .signin-form .form-group__input {
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  font-size: 10px;
-  padding: 10px 8px;
-  width: 100%;
-}
-
-.signin-group .signin-form__btn-area .btn {
-  background-color: #5ecb7c;
-  border-radius: 4px;
-  color: #eee;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1;
-  padding: 8px;
-  width: 100%;
-}
-
-.signin-group .signin-form__btn-area .btn:hover {
-  opacity: 0.8;
-}
-
-.signin-group .social-lists__item {
-  border-radius: 4px;
-  color: #eee;
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-
-.signin-group .social-lists__item:last-child {
-  margin-bottom: 0;
-}
-
-.signin-group .social-lists__item.twitter {
-  background-color: #66A8E2;
-}
-
-.signin-group .social-lists__item.google {
-  background-color: #EA4334;
-}
-
-.signin-group .social-lists__item.github {
-  background-color: #333333;
-}
-
-.signin-group .social-lists__link {
-  display: block;
-  font-size: 18px;
-  padding: 8px;
-  text-align: center;
-}
-
-.signin-group .social-lists__link:hover {
-  opacity: 0.8;
-}
-
-.signin-group .social-lists__link .fab {
-  margin-right: 4px;
+.signup-group {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+          flex-direction: row-reverse;
 }
 
 .auth-page {
@@ -388,5 +282,117 @@ select {
 
 .auth-page .auth-to-top:hover {
   text-decoration: underline;
+}
+
+.users-page-wrapper {
+  background-color: #eee;
+}
+
+.users-page-wrapper .users-page-title {
+  background-color: #3cba5f;
+  border-radius: 4px;
+  color: #eee;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 24px 32px;
+}
+
+.users-page-wrapper .users-page-inner {
+  color: #333;
+  padding: 24px;
+}
+
+.users-page-wrapper .users-page-inner .to-signup-or-signin {
+  text-align: center;
+  font-size: 14px;
+}
+
+.users-page-wrapper .users-page-inner .to-signup-or-signin a {
+  color: #66A8E2;
+  text-decoration: underline;
+}
+
+.auth-group {
+  border-top: 1px solid #aaa;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.auth-group__item {
+  width: 50%;
+  padding: 10px;
+  border-right: 1px solid #aaa;
+}
+
+.auth-group__item:nth-child(2) {
+  border-right: none;
+}
+
+.auth-group .auth-form .form-group {
+  margin-bottom: 20px;
+}
+
+.auth-group .auth-form .form-group__input {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 10px 8px;
+  width: 100%;
+}
+
+.auth-group .auth-form__btn-area .btn {
+  background-color: #5ecb7c;
+  border-radius: 4px;
+  color: #eee;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1;
+  padding: 8px;
+  width: 100%;
+}
+
+.auth-group .auth-form__btn-area .btn:hover {
+  opacity: 0.8;
+}
+
+.auth-group .social-lists__item {
+  border-radius: 4px;
+  color: #eee;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.auth-group .social-lists__item:last-child {
+  margin-bottom: 0;
+}
+
+.auth-group .social-lists__item.twitter {
+  background-color: #66A8E2;
+}
+
+.auth-group .social-lists__item.google {
+  background-color: #EA4334;
+}
+
+.auth-group .social-lists__item.github {
+  background-color: #333333;
+}
+
+.auth-group .social-lists__link {
+  display: block;
+  font-size: 18px;
+  padding: 8px;
+  text-align: center;
+}
+
+.auth-group .social-lists__link:hover {
+  opacity: 0.8;
+}
+
+.auth-group .social-lists__link .fab {
+  margin-right: 4px;
 }
 

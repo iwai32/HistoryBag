@@ -1,0 +1,1 @@
+<p class="to-signup-or-signin">{{ $messageToLink }}</p>

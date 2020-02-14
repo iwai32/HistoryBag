@@ -1,35 +1,34 @@
 @extends('layouts.users')
-@section('authTitle', 'signin')
+@section('authTitle', 'signup')
 @section('userPageContents')
   @component('users.components.pageTitle')
     @slot('pageTitle')
-    サインイン
+    新規登録
     @endslot
   @endcomponent
 
   @section('usersPageInner')
-
     @component('users.components.authGroup')
       @slot('layoutEachPage')<!--ページごとにレイアウトを切り替える-->
-      signin-group
+      signup-group
       @endslot
 
       @slot('destinationUrl')
-      {{ route('user.signin') }}
+      {{ route('user.signup') }}
       @endslot
 
       @slot('authBtnMessage')
-      サインイン
+      新規登録
       @endslot
 
       @slot('snsAuthMessage')
-      サインイン
+      登録
       @endslot
     @endcomponent
 
     @component('users.components.toSigninOrSignup')
       @slot('messageToLink')
-      アカウントを持ってない場合は<a href="{{ route('user.signupPage') }}">新規登録</a>へ
+      HistoryBagに登録済みの方は<a href="{{ route('user.signinPage') }}">サインイン</a>へ
       @endslot
     @endcomponent
   @endsection<!--usersPageInner-->
