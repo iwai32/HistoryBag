@@ -4,12 +4,18 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
+use App\Models\User;
 use Auth;
-use Illuminate\Support\Facades\Hash;
+use Hash;
 
 class UserController extends Controller
 {
+    private $user;
+
+    public function __construct(User $user)
+    {
+      $this->user = $user;
+    }
     //新規登録ページへ
     public function toSignupPage()
     {
@@ -27,17 +33,17 @@ class UserController extends Controller
       ]);
       
       //DBインサート
-      $user = new User([
+      $inputs = [
         'name' => $request->input('name'),
         'email' => $request->input('email'),
         'password' => Hash::make($request->input('password'))
-      ]);
+      ];
 
       //保存
-      $user->save();
+      $this->user->fill($inputs)->save();
 
       //登録したユーザーでログインする
-      Auth::login($user);
+      Auth::login($this->user);
 
       //リダイレクト
       return redirect()->route('dailyReport');
@@ -60,7 +66,6 @@ class UserController extends Controller
       ]);
 
       $credentials = $request->only('email', 'password');
-      //リクエスト内容と一致したユーザーテーブルを取得し、その情報でログインする。
 
       if (Auth::attempt($credentials)) {
         //認証に成功
