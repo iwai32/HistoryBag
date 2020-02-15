@@ -19,6 +19,7 @@
       <div class="auth-form__btn-area">
         <button class="btn">{{ $authBtnMessage }}</button>
       </div>
+      @csrf
     </form>
   </li>
 

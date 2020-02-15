@@ -1,0 +1,7 @@
+.signin-group {
+  .auth-group__item {
+    &:last-child {
+      border-left: 1px solid $border-color;
+    }
+  }
+}

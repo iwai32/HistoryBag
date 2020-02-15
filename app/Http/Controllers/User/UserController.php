@@ -10,7 +10,13 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    //新規登録
+    //新規登録ページへ
+    public function toSignupPage()
+    {
+      return view('users.signup');
+    }
+
+    //新規登録する
     public function postSignup(Request $request)
     {
       //バリデーション
@@ -37,14 +43,36 @@ class UserController extends Controller
       return redirect()->route('dailyReport');
     }
 
-    //ログイン
+    //ログインページへ
     public function toSigninPage()
     {
+      //もし既にログインしているなら日報ページへ遷移middlewareで定義していいかも
       return view('users.signin');
     }
 
+    //ログインする
+    public function postSignin(Request $request)
+    {
+      //バリデーション
+      $request->validate([
+        'email' => 'bail|required|email',
+        'password' => 'required|min:8|alpha_num'
+      ]);
+
+      $credentials = $request->only('email', 'password');
+      //リクエスト内容と一致したユーザーテーブルを取得し、その情報でログインする。
+
+      if (Auth::attempt($credentials)) {
+        //認証に成功
+        return redirect()->route('dailyReport');
+      } else {
+        // 認証に失敗
+        return redirect()->route('user.signin');
+      }
+    }
+
     //ログアウト
-    public function getLogout()
+    public function getSignout()
     {
       Auth::logout();
       return redirect()->route('top');
