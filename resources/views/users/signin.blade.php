@@ -9,8 +9,9 @@
 
   @section('usersPageInner')
 
+  <!--ページごとにレイアウトを切り替える-->
     @component('users.components.authGroup')
-      @slot('layoutEachPage')<!--ページごとにレイアウトを切り替える-->
+      @slot('layoutEachPage')
       signin-group
       @endslot
 
