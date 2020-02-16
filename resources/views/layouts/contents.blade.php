@@ -32,10 +32,10 @@
           <div class="user-guide__groups">
             <ul class="user-guide__account">
               <li class="user-guide__account__link">
-                <a class="user-guide__account__link__anchor" href="#">新規登録</a>
+                <a class="user-guide__account__link__anchor" href="{{ route('user.signupPage') }}">新規登録</a>
               </li>
               <li class="user-guide__account__link">
-                <a class="user-guide__account__link__anchor" href="#">ログイン</a>
+                <a class="user-guide__account__link__anchor" href="{{ route('user.signinPage') }}">サインイン</a>
               </li>
             </ul>
             <div class="user-guide__language">
@@ -59,9 +59,15 @@
           <h1 class="app-title"><a href="#">HistoryBag</a></h1>
           <div class="user-contents__nav">
             <ul class="user-contents__nav__items">
-              <li class="account-nav"><a href="#"><i class="fas fa-user-circle"></i></a></li>
-              <li class="favorites"><a href="#"><i class="fas fa-star"></i></a></li>
-              <li class="logout"><a href="{{ route('user.signout') }}">サインアウト</a></li>
+              <li class="account-nav">
+                <i class="fas fa-user-circle"></i>
+                <ul class="account-nav__lists">
+                  <li><a href="#">プロフィール</a></li>
+                  <li><a href="{{ route('user.signout') }}">サインアウト</a></li>
+                </ul>
+              </li>
+
+              <li class="favorites"><a href="#"><i class="fas fa-star"></i></a></li><!--お気に入りページへ-->
             </ul>
           </div>
         </div>
