@@ -21,8 +21,14 @@ Route::post('user/signin', 'User\UserController@postSignin')->name('user.signin'
 Route::get('user/signout', 'User\UserController@getSignout')->name('user.signout');
 
 //Oauth認証
+//twitter
+Route::get('user/twitter', 'User\OauthController@redirectToTwitter')->name('user.redirectTwitter');
+//google
 Route::get('user/google', 'User\OauthController@redirectToGoogle')->name('user.redirectGoogle');
 Route::get('user/callback/google', 'User\OauthController@authGoogleCallback');
+//github
+Route::get('user/github', 'User\OauthController@redirectToGithub')->name('user.redirectGithub');
+Route::get('user/callback/github', 'User\OauthController@authGithubCallback');
 
 //トップページ
 Route::get('/', function() {

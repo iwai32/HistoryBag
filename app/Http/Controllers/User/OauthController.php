@@ -18,11 +18,27 @@ class OauthController extends Controller
   }
 
   /**
+   * Twitterの認証ページへユーザーをリダイレクト
+   */
+  public function redirectToTwitter()
+  {
+    return Socialite::driver('twitter')->redirect();
+  }
+
+  /**
    * Googleの認証ページへユーザーをリダイレクト
    */
   public function redirectToGoogle()
   {
     return Socialite::driver('google')->redirect();
+  }
+
+  /**
+   * Githubの認証ページへユーザーをリダイレクト
+   */
+  public function redirectToGithub()
+  {
+    return Socialite::driver('github')->redirect();
   }
 
   /**
@@ -35,6 +51,21 @@ class OauthController extends Controller
     $userInputs = [
       'email' => $googleUser->email,
       'name' => $googleUser->nickname ?? $googleUser->name,
+    ];
+
+    return $this->authAndSignin($userInputs);
+  }
+
+  /**
+   * Githubからユーザー情報を取得
+   */
+  public function authGithubCallback()
+  {
+    $githubUser = Socialite::driver('github')->user();
+
+    $userInputs = [
+      'email' => $githubUser->email,
+      'name' => $githubUser->nickname ?? $githubUser->name,
     ];
 
     return $this->authAndSignin($userInputs);

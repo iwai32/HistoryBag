@@ -58,7 +58,7 @@
 
       <ul class="social-signup">
         <li class="type-sns twitter">
-          <a class="type-sns__link" href="#"><i class="fab fa-twitter-square twitter-icon"></i>Twitterで登録</a>
+          <a class="type-sns__link" href="{{ route('user.redirectTwitter') }}"><i class="fab fa-twitter-square twitter-icon"></i>Twitterで登録</a>
         </li>
 
         <li class="type-sns google">
@@ -66,7 +66,7 @@
         </li>
 
         <li class="type-sns github">
-          <a class="type-sns__link" href="#"><i class="fab fa-github github-icon"></i>githubで登録</a>
+          <a class="type-sns__link" href="{{ route('user.redirectGithub') }}"><i class="fab fa-github github-icon"></i>githubで登録</a>
         </li>
       </ul>
     </div>
