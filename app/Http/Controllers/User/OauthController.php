@@ -22,7 +22,7 @@ class OauthController extends Controller
    */
   public function redirectToTwitter()
   {
-    return Socialite::driver('twitter')->redirect();
+    return $this->redirectToSocial('twitter');
   }
 
   /**
@@ -30,7 +30,7 @@ class OauthController extends Controller
    */
   public function redirectToGoogle()
   {
-    return Socialite::driver('google')->redirect();
+    return $this->redirectToSocial('google');
   }
 
   /**
@@ -38,7 +38,24 @@ class OauthController extends Controller
    */
   public function redirectToGithub()
   {
-    return Socialite::driver('github')->redirect();
+    return $this->redirectToSocial('github');
+  }
+
+  /**
+   * 指定のSNSへリダイレクト
+   */
+  public function redirectToSocial($socialName)
+  {
+    return Socialite::driver($socialName)->redirect();
+  }
+
+  /**
+   * Twitterからユーザー情報を取得
+   */
+  public function authTwitterCallback()
+  {
+    $twitterUser =  $this->getSocialUser('twitter');
+    return $this->authAndSignin($twitterUser);
   }
 
   /**
@@ -46,14 +63,8 @@ class OauthController extends Controller
    */
   public function authGoogleCallback()
   {
-    $googleUser =  Socialite::driver('google')->user();
-
-    $userInputs = [
-      'email' => $googleUser->email,
-      'name' => $googleUser->nickname ?? $googleUser->name,
-    ];
-
-    return $this->authAndSignin($userInputs);
+    $googleUser =  $this->getSocialUser('google');
+    return $this->authAndSignin($googleUser);
   }
 
   /**
@@ -61,14 +72,16 @@ class OauthController extends Controller
    */
   public function authGithubCallback()
   {
-    $githubUser = Socialite::driver('github')->user();
+    $githubUser = $this->getSocialUser('github');
+    return $this->authAndSignin($githubUser);
+  }
 
-    $userInputs = [
-      'email' => $githubUser->email,
-      'name' => $githubUser->nickname ?? $githubUser->name,
-    ];
-
-    return $this->authAndSignin($userInputs);
+  /**
+   * SNSからユーザー情報を取得
+   */
+  public function getSocialUser($socialName)
+  {
+    return Socialite::driver($socialName)->user();
   }
 
   /**
@@ -77,9 +90,9 @@ class OauthController extends Controller
   public function authAndSignin($userInputs)
   {
     $user = $this->user->firstOrNew([
-      'email' => $userInputs['email']
+      'email' => $userInputs->email
     ],[
-      'name' => $userInputs['name'],
+      'name' => $userInputs->nickname ?? $userInputs->name,
       'password' => 'socialuser'
     ]);
 

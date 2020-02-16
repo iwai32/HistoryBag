@@ -26,15 +26,15 @@
   <li class="auth-group__item">
     <ul class="social-lists">
       <li class="social-lists__item twitter">
-        <a href="#" class="social-lists__link"><i class="fab fa-twitter-square twitter-icon"></i>twitterで{{ $snsAuthMessage }}</a>
+        <a href="{{ route('user.redirectTwitter') }}" class="social-lists__link"><i class="fab fa-twitter-square twitter-icon"></i>twitterで{{ $snsAuthMessage }}</a>
       </li>
 
       <li class="social-lists__item google">
-        <a href="#" class="social-lists__link"><i class="fab fa-google google-icon"></i>googleで{{ $snsAuthMessage }}</a>
+        <a href="{{ route('user.redirectGoogle') }}" class="social-lists__link"><i class="fab fa-google google-icon"></i>googleで{{ $snsAuthMessage }}</a>
       </li>
 
       <li class="social-lists__item github">
-        <a href="#" class="social-lists__link"><i class="fab fa-github github-icon"></i>githubで{{ $snsAuthMessage }}</a>
+        <a href="{{ route('user.redirectGithub') }}" class="social-lists__link"><i class="fab fa-github github-icon"></i>githubで{{ $snsAuthMessage }}</a>
       </li>
     </ul>
   </li>
