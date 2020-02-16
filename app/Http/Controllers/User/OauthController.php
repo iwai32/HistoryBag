@@ -20,42 +20,42 @@ class OauthController extends Controller
   /**
    * Googleの認証ページへユーザーをリダイレクト
    */
-    public function redirectToGoogle()
-    {
-      return Socialite::driver('google')->redirect();
-    }
+  public function redirectToGoogle()
+  {
+    return Socialite::driver('google')->redirect();
+  }
 
-    /**
-     * Googleからユーザー情報を取得
-     */
-    public function authGoogleCallback()
-    {
-      $googleUser =  Socialite::driver('google')->user();
+  /**
+   * Googleからユーザー情報を取得
+   */
+  public function authGoogleCallback()
+  {
+    $googleUser =  Socialite::driver('google')->user();
 
-      $userInputs = [
-        'email' => $googleUser->email,
-        'name' => $googleUser->nickname ?? $googleUser->name,
-      ];
+    $userInputs = [
+      'email' => $googleUser->email,
+      'name' => $googleUser->nickname ?? $googleUser->name,
+    ];
 
-      return $this->authAndSignin($userInputs);
-    }
+    return $this->authAndSignin($userInputs);
+  }
 
-    /**
-     * 認証情報を元にサインインする
-     */
-    public function authAndSignin($userInputs)
-    {
-      $user = $this->user->firstOrNew([
-        'email' => $userInputs['email']
-      ],[
-        'name' => $userInputs['name'],
-        'password' => 'socialuser'
-      ]);
+  /**
+   * 認証情報を元にサインインする
+   */
+  public function authAndSignin($userInputs)
+  {
+    $user = $this->user->firstOrNew([
+      'email' => $userInputs['email']
+    ],[
+      'name' => $userInputs['name'],
+      'password' => 'socialuser'
+    ]);
 
-      $user->save();
+    $user->save();
 
-      Auth::login($user);
+    Auth::login($user);
 
-      return redirect()->route('dailyReport');
-    }
+    return redirect()->route('dailyReport');
+  }
 }
