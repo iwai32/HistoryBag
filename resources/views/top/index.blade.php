@@ -10,7 +10,7 @@
   <!--scripts-->
   <script src="{{ mix('/js/app.js') }}" defer></script>
   <!--styles-->
-  <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+  <link href="{{ mix('/css/top.css') }}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Bitter|Kreon&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <!-- OGP -->
@@ -32,25 +32,26 @@
 
     <!--認証の種類-->
     <div class="signup-wrapper">
-      <form class="normal-signup-form" action="">
+      <form class="normal-signup-form" action="{{ route('user.signup') }}" method="post">
         <div class="form-group">
           <label class="form-group__label" for="user_name">ユーザ名</label>
-          <input class="form-group__input" id="user_name" name="username" type="text">
+          <input class="form-group__input" id="user_name" name="name" type="text" required>
         </div>
 
         <div class="form-group">
           <label class="form-group__label" for="email">メールアドレス</label>
-          <input class="form-group__input" id="email" name="email" type="email">
+          <input class="form-group__input" id="email" name="email" type="email" required>
         </div>
 
         <div class="form-group">
           <label class="form-group__label" for="password">パスワード</label>
-          <input class="form-group__input" id="password" name="password" type="password">
+          <input class="form-group__input" id="password" name="password" type="password" required>
         </div>
 
         <div class="normal-signup-form__btn-area">
           <button class="btn">登録する</button>
         </div>
+        @csrf
       </form>
 
        <span class="signup-text--or">OR</span>
@@ -61,7 +62,7 @@
         </li>
 
         <li class="type-sns google">
-          <a class="type-sns__link" href="#"><i class="fab fa-google google-icon"></i>googleで登録</a>
+          <a class="type-sns__link" href="{{ route('user.redirectGoogle') }}"><i class="fab fa-google google-icon"></i>googleで登録</a>
         </li>
 
         <li class="type-sns github">
@@ -70,7 +71,7 @@
       </ul>
     </div>
     
-    <p class="top-signin">登録済みの方はこちらで<a class="top-signin__link" href="#">ログイン</a>してください</p>
+    <p class="top-signin">既に登録済みの方はこちらで<a class="top-signin__link" href="{{ route('user.signinPage') }}">サインイン</a>してください</p>
     </div>
   </div><!--.top-wrapper-->
 </body>

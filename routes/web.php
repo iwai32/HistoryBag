@@ -20,6 +20,10 @@ Route::post('user/signin', 'User\UserController@postSignin')->name('user.signin'
 //サインアウト
 Route::get('user/signout', 'User\UserController@getSignout')->name('user.signout');
 
+//Oauth認証
+Route::get('user/google', 'User\OauthController@redirectToGoogle')->name('user.redirectGoogle');
+Route::get('user/callback/google', 'User\OauthController@authGoogleCallback');
+
 //トップページ
 Route::get('/', function() {
     return view('top.index');

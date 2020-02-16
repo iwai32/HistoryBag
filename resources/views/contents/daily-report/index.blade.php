@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.contents')
 
 @section('contents')
   <div class="inner daily-report-inner">

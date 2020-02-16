@@ -10,7 +10,7 @@
   <!--scripts-->
   <script src="{{ mix('/js/app.js') }}" defer></script>
   <!--styles-->
-  <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+  <link href="{{ mix('/css/contents.css') }}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Bitter|Kreon&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <!-- OGP -->
@@ -61,7 +61,7 @@
             <ul class="user-contents__nav__items">
               <li class="account-nav"><a href="#"><i class="fas fa-user-circle"></i></a></li>
               <li class="favorites"><a href="#"><i class="fas fa-star"></i></a></li>
-              <li class="logout"><a href="#">ログアウト</a></li>
+              <li class="logout"><a href="{{ route('user.signout') }}">サインアウト</a></li>
             </ul>
           </div>
         </div>
