@@ -100,6 +100,6 @@ class OauthController extends Controller
 
     Auth::login($user);
 
-    return redirect()->route('dailyReport');
+    return redirect()->route('dailyReport.index');
   }
 }

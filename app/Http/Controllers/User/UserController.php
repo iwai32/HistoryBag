@@ -46,7 +46,7 @@ class UserController extends Controller
     Auth::login($this->user);
 
     //リダイレクト
-    return redirect()->route('dailyReport');
+    return redirect()->route('dailyReport.index');
   }
 
   //ログインページへ
@@ -69,7 +69,7 @@ class UserController extends Controller
 
     if (Auth::attempt($credentials)) {
       //認証に成功
-      return redirect()->route('dailyReport');
+      return redirect()->route('dailyReport.index');
     } else {
       // 認証に失敗
       return redirect()->route('user.signin');
