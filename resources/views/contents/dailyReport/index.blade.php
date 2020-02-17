@@ -1,13 +1,18 @@
 @extends('layouts.contents')
+@section('globalSearcher')
+  @component('contents.components.globalSearcher')
+  @endcomponent
+@endsection
 
 @section('contents')
-  <div class="inner daily-report-inner">
-    <div class="report-edit">
-      <ul class="report-edit__nav">
-        <li class="report-edit__nav__list">
-          <a class="btn create-btn" href="#"><span>create</span><i class="fas fa-plus-circle"></i></a>
+  <div class="inner">
+    <h2 class="daily-report__top-title">日報トップページ</h2>
+    <div class="report-operation">
+      <ul class="report-operation__nav">
+        <li class="report-operation__nav__list">
+          <a class="btn create-btn" href="{{ route('dailyReport.create') }}"><span>create</span><i class="fas fa-plus-circle"></i></a>
         </li>
-        <li class="report-edit__nav__list">
+        <li class="report-operation__nav__list">
           <button class="btn delete-btn" type="button"><span>delete</span><i class="fas fa-trash-alt"></i></button>
         </li>
       </ul>

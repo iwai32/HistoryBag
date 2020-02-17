@@ -127,11 +127,15 @@ img {
 }
 
 /*フォーム要素のスタイルをリセット*/
-input {
+input, textarea {
   padding: 0;
   border: none;
   border-radius: 0;
   outline: none;
+}
+
+textarea {
+  resize: none;
 }
 
 select {
