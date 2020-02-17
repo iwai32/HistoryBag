@@ -41,7 +41,5 @@ Route::get('/', function() {
 //日報
 //ミドルウェアを設定する
 Route::middleware('auth')->group(function() {
-  Route::get('/contents/daily-report', function () {
-    return view('contents.daily-report.index');
-  })->name('dailyReport');
+  Route::resource('/contents/dailyReport','Contents\DailyReportController');
 });
