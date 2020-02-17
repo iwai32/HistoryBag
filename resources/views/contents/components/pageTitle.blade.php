@@ -1,0 +1,1 @@
+<h2 class="contents-page-title">{{ $pageTitle }}&nbsp;<span class="sub-title">{{ $pageSubTitle }}</span></h2>

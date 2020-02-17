@@ -41,5 +41,7 @@ Route::get('/', function() {
 //日報
 //ミドルウェアを設定する
 Route::middleware('auth')->group(function() {
+  Route::post('/contents/dailyReport/confirm', 'Contents\DailyReportController@confirm')
+  ->name('dailyReport.confirm');
   Route::resource('/contents/dailyReport','Contents\DailyReportController');
 });

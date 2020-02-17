@@ -27,6 +27,11 @@ class DailyReportController extends Controller
         return view('contents.dailyReport.create');
     }
 
+    public function confirm(Request $request)
+    {
+        return view('contents.dailyReport.confirm');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
