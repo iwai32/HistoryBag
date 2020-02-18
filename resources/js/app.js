@@ -18,6 +18,10 @@ const app = new Vue({
     },
     deleteCategoryTag(key) {
       this.categories.splice(key, 1)
+    },
+    /**ページをリロードする */
+    resetInput() {
+      document.location.reload()
     }
   }
 })

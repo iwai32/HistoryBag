@@ -36,7 +36,7 @@
 
       <div class="create-form__btn-wrapper">
         <button class="btn">作成する</button>
-        <button class="btn reset">やり直す</button>
+        <button class="btn reset" @click.prevent="resetInput">やり直す</button>
       </div>
       @csrf
     </form>

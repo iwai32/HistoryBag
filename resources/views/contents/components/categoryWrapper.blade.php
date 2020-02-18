@@ -14,12 +14,11 @@
 
   <ul class="category-tag-wrapper">
     <li class="category-tag" v-for="(category, key) in categories">
-      <p class="tag">@{{ category }}</p>
-
+      <p class="tag" v-cloak>@{{ category }}</p>
       <span class="delete-btn"
-      @click="deleteCategoryTag(key)"><i class="far fa-times-circle"></i></span>
-
-      <input class="input-hidden" type="checkbox" name="category" 
+      @click="deleteCategoryTag(key)"
+      v-cloak><i class="far fa-times-circle"></i></span>
+      <input class="input-hidden" type="checkbox" name="category[]" 
       :value="category" checked>
     </li>
   </ul>

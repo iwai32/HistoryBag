@@ -4,6 +4,10 @@
   max-width: 1000px;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 .common-body {
   background-color: $base-color;
 }

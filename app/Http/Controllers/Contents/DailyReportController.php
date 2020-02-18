@@ -29,7 +29,8 @@ class DailyReportController extends Controller
 
     public function confirm(Request $request)
     {
-        return view('contents.dailyReport.confirm');
+        $inputs = $request->all();
+        return view('contents.dailyReport.confirm', compact('inputs'));
     }
 
     /**

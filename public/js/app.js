@@ -31564,6 +31564,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     },
     deleteCategoryTag: function deleteCategoryTag(key) {
       this.categories.splice(key, 1);
+    },
+
+    /**ページをリロードする */
+    resetInput: function resetInput() {
+      document.location.reload();
     }
   }
 });

@@ -17,20 +17,29 @@
     <form action="#" method="post">
       @component('contents.components.definitionList')
       @slot('titleContent')
-      タイトルコンテンツ
+      {{ $inputs['title'] }}
       @endslot
 
       @slot('categoryContent')
-      カテゴリ内容
+      @isset($inputs['category'])
+      <ul class="category-tag-wrapper">
+        @foreach ($inputs['category'] as $category)
+        <li class="category-tag">
+          <p class="tag">{{ $category }}</p>
+          <input class="input-hidden" type="checkbox" name="category" value="{{ $category }}">
+        </li>
+        @endforeach
+      </ul>
+      @endisset
       @endslot
 
       @slot('dateContent')
-      日付/の/コンテンツ
+      {{ $inputs['date'] }}
       @endslot
       @endcomponent
 
       <p class="contents-text">
-        {{ '日報機能の確認画面のテキ' }}
+        {{ $inputs['content'] }}
       </p>
 
       <div class="confirm-area">
@@ -42,11 +51,9 @@
         </div>
       </div>
       @csrf
-      <input type="hidden" name="title">
-      <!--チェックボックスを受け取った配列の数だけ出力し、cssで隠す-->
-      <input class="input-hidden" type="checkbox" name="category">
-      <input type="hidden" name="date">
-      <input type="hidden" name="content">
+      <input type="hidden" name="title" value="{{ $inputs['title'] }}">
+      <input type="hidden" name="date" value="{{ $inputs['date'] }}">
+      <input type="hidden" name="content" value="{{ $inputs['content'] }}">
     </form>
   </div>
 </div>
