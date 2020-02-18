@@ -39,7 +39,6 @@
         <button class="btn reset">やり直す</button>
       </div>
       @csrf
-      <input class="input-hidden" type="checkbox" name="category">
     </form>
   </div>
 </div>

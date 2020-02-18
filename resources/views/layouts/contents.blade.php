@@ -23,6 +23,7 @@
   <link rel="shortcut icon" href="">
 </head>
 <body class="common-body">
+  <div id="app"> 
   <!--header-->
   <header class="g-header">
     <div class="user-wrapper">
@@ -117,5 +118,6 @@
       
     </div>
   </footer>
+  </div>
 </body>
 </html>
