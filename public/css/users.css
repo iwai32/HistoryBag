@@ -250,6 +250,10 @@ select {
   margin-bottom: 120px;
 }
 
+.input-hidden {
+  display: none;
+}
+
 .signin-group .auth-group__item:last-child {
   border-left: 1px solid #aaa;
 }

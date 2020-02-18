@@ -33,12 +33,13 @@
         <textarea class="textarea" name="content" id="content"
         placeholder="気づいたことや反省点、成果やこれからの目標などを投稿してみましょう。"></textarea>
       </div>
-      
+
       <div class="create-form__btn-wrapper">
         <button class="btn">作成する</button>
         <button class="btn reset">やり直す</button>
       </div>
       @csrf
+      <input class="input-hidden" type="checkbox" name="category">
     </form>
   </div>
 </div>

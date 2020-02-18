@@ -12,13 +12,9 @@
     </select>
   </div>
 
-  <div class="category-check-box-wrapper">
+  <div class="category-tag-wrapper">
     <div class="category-tag">
-      <label class="label">
-        <div class="inputs">
-          <input class="check-box" type="checkbox" name="category" value="HTML" checked>HTML
-        </div>
-      </label>
+      <p class="tag">HTML</p>
       <span class="delete-btn"><i class="far fa-times-circle"></i></span>
     </div>
   </div>

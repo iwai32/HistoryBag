@@ -250,6 +250,10 @@ select {
   margin-bottom: 120px;
 }
 
+.input-hidden {
+  display: none;
+}
+
 .top-body {
   background-color: #3cba5f;
 }

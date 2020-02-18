@@ -1,6 +1,7 @@
 @import "../reset", "../variable", "../common", "header",
  "footer", "daily-report";
 
+ /*ページタイトル*/
 .contents-page-title {
   background-color: $main-color;
   border-radius: 2px;
@@ -16,6 +17,7 @@
   }
 }
 
+/*コンテンツ詳細*/
 .contents-definition-list {
   background-color: $white;
   border: 1px solid $border-color;
@@ -45,13 +47,15 @@
   }
 }
 
+/*カテゴリー*/
 .contents-category-wrapper {
   display: $f;
+  align-items: $fs;
+  width: 100%;
   /*セレクトボックス*/
   .category-select-wrapper {
     position: relative;
     width: max-content;
-    margin-right: 10px;
     &::after {
       content: "";
       position: absolute;
@@ -70,9 +74,11 @@
       padding: 2px 10px;
     }
   }
-  /*チェックボックス*/
-  .category-check-box-wrapper {
+
+  .category-tag-wrapper {
     display: $f;
+    flex-wrap: $wr;
+    justify-content: $sb;
     .category-tag {
       background-color: #ddd;
       border: 1px solid $border-color;
@@ -80,16 +86,17 @@
       font-size: 12px;
       align-items: $c;
       letter-spacing: .05em;
-      margin-right: 10px;
+      margin-left: 10px;
+      margin-bottom: 5px;
       padding: 2px 4px;
+      &:nth-child(n+9) {
+        margin-bottom: 0;
+      }
       &:last-child {
         margin-right: 0;
       }
-      .label {
+      .tag {
         margin-right: 2px;
-        .check-box {
-          display: none;
-        }
       }
       .delete-btn {
         cursor: pointer;
