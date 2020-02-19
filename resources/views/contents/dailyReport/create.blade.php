@@ -13,7 +13,7 @@
   @endcomponent
 
   <div class="daily-report__frame">
-    <form action="{{ route('dailyReport.confirm') }}" class="create-form" method="post">
+    <form action="{{ route('dailyReport.confirm') }}" class="create-form" method="post" enctype="multipart/form-data">
       @component('contents.components.definitionList')
         @slot('titleContent')
         <input class="create-form__input title" type="text" name="title" id="title">
@@ -27,12 +27,18 @@
         @slot('dateContent')
         <input  class="create-form__input date" type="date" name="date" id="date">
         @endslot
+        
+        @slot('photoContent')
+        <input type="file" name="photo">
+        @endslot
       @endcomponent
 
       <div class="create-form__content-wrapper">
         <textarea class="textarea" name="content" id="content"
         placeholder="気づいたことや反省点、成果やこれからの目標などを投稿してみましょう。"></textarea>
       </div>
+
+      @component('contents.components.errorMessage')@endcomponent
 
       <div class="create-form__btn-wrapper">
         <button class="btn">作成する</button>
