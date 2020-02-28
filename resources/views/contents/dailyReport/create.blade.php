@@ -16,7 +16,7 @@
     <form action="{{ route('dailyReport.confirm') }}" class="create-form" method="post" enctype="multipart/form-data">
       @component('contents.components.definitionList')
         @slot('titleContent')
-        <input class="create-form__input title" type="text" name="title" id="title">
+        <input class="create-form__input title" type="text" name="title" id="title" value="{{ old('title') }}">
         @endslot
 
         @slot('categoryContent')
@@ -25,7 +25,7 @@
         @endslot
 
         @slot('dateContent')
-        <input  class="create-form__input date" type="date" name="date" id="date">
+        <input  class="create-form__input date" type="date" name="date" id="date" value="{{ Carbon::now()->format('Y-m-d') }}">
         @endslot
         
         @slot('photoContent')
@@ -34,8 +34,8 @@
       @endcomponent
 
       <div class="create-form__content-wrapper">
-        <textarea class="textarea" name="content" id="content"
-        placeholder="気づいたことや反省点、成果やこれからの目標などを投稿してみましょう。"></textarea>
+        <textarea class="textarea" name="content" id="content" value="{{ old('content') }}"
+        placeholder="気づいたことや反省点、成果やこれからの目標などを投稿してみましょう。(最大1000文字)"></textarea>
       </div>
 
       @component('contents.components.errorMessage')@endcomponent

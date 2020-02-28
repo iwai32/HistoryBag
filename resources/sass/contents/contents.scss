@@ -24,6 +24,9 @@
   display: $f;
   flex-wrap: $wr;
   margin-bottom: 30px;
+  .required {
+    color: lighten($red, 20%);
+  }
   >dt {
     border-right: 1px solid $border-color;
     display: $f;

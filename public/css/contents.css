@@ -1050,6 +1050,10 @@ select {
   margin-bottom: 30px;
 }
 
+.contents-definition-list .required {
+  color: #ff8f66;
+}
+
 .contents-definition-list > dt {
   border-right: 1px solid #aaa;
   display: -webkit-box;

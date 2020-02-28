@@ -23,7 +23,7 @@
         <article class="report-cell">
           <a href="#" class="report-cell__link">
             <figure class="report-cell__photo">
-              <img src="{{ asset('images/cat_sample01.jpg') }}" loading="lazy" alt="">
+              <img src="{{ asset('images/4/cat_sample01.jpg') }}" loading="lazy" alt="">
             </figure>
             <div class="report-cell__header">
               <p class="report-cell__date">2020/01/31</p>

@@ -9,6 +9,7 @@
       <option value="SQL">SQL</option>
       <option value="AWS">AWS</option>
       <option value="Linux">Linux</option>
+      <option value="その他">その他</option>
     </select>
   </div>
 
