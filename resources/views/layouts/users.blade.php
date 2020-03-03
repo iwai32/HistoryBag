@@ -7,8 +7,6 @@
   <title>{{ config('app.name') }}の@yield('authTitle')ページ</title>
   <!--csrf-->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <!--scripts-->
-  <script src="{{ mix('/js/app.js') }}" defer></script>
   <!--styles-->
   <link href="{{ mix('/css/users.css') }}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Bitter|Kreon&display=swap" rel="stylesheet">
